@@ -1,10 +1,11 @@
+import Router from "../router/router"
 
 
 function App() {
 
   return (
     <>
-      <p className='text-blue-700 text-3xl text-center'>helooo</p>
+    <Router />
     </>
   )
 }

@@ -1,26 +1,19 @@
 // src/i18n.js
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-
+import global_es from '../translations/es/global.json';
+import global_en from '../translations/en/global.json';
 const resources = {
   en: {
-    translation: {
-      welcome: "Welcome to the Home Page",
-      about: "About Us",
-      login:'Sign IN'
-    }
+    translation: global_en
   },
   es: {
-    translation: {
-      welcome: "Bienvenido a la Página de Inicio",
-      about: "Acerca de Nosotros",
-      login:'Iniciar Sesión'
-    }
+    translation: global_es
   }
 };
 
 i18n
-  .use(initReactI18next) 
+  .use(initReactI18next)
   .init({
     resources,
     lng: "es", 
