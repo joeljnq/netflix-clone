@@ -5,7 +5,16 @@
         "title": "Unlimited movies, TV, showsm and more",
         "subtitle": "starts at EUR 5.49. Cancel anytime.",
         "ready": "Ready to watch? Enter your email to create or restart your membership.",
-        "getStarted": "Get Started"
-        
+        "getStarted": "Get Started",
+        "email": "Email Address"        
+    },
+    "signIn":{
+        "signIn": "Sign In",
+        "email": "Email or mobile number",
+        "password": "Password",
+        "new": "New to Netflix?",
+        "signUp": "Sign up now."
+
     }
+
 }

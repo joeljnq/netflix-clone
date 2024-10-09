@@ -1,24 +1,27 @@
 import React from "react";
-import logo from "../images/logo.svg";
+import logo from "../assets/images/logo.svg";
 import LanguageSelector from "./LanguageSelector";
 import { useTranslation } from "react-i18next";
-import bgLandingPage from "../assets/images/bg-landingPg.jpg";
+import { useNavigate } from "react-router-dom";
 
 const LandingPage: React.FC = () => {
-  const { t } = useTranslation();
+  const navigate = useNavigate();
+  const { t,i18n } = useTranslation();
+  const handleToLogin = () =>{
+  navigate(`/${i18n.language}/login`)
+  }
   return (
     <>
       <div
-        className="absolute top-0 left-0 min-h-[90%] w-full bg-gradient-to-b from-black/80 to-transparent bg-cover bg-center"
-        style={{ backgroundImage: `url(${bgLandingPage})` }}
-      >
+        className={`absolute min-h-full pt-6 w-full bg-[url(../assets/images/bg-landingPg.jpg)] from-black/80 to-transparent bg-cover bg-center`}>
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 to-transparent z-0"></div>
 
         <header className="relative w-full mx-auto lg:max-w-7xl bg-transparent flex justify-between text-white z-10">
-          <img src={logo} alt="logo netflix" className="w-48" />
-          <div>
+          <img src={logo} alt="logo netflix" className="w-36" />
+          <div >
             <LanguageSelector />
-            <button className="bg-[#B20710] w-30 rounded-md p-2">
+            <button className="bg-[#E50914] w-30 rounded-md p-2 ml-3 hover:bg-[#B20710]"
+            onClick={()=>handleToLogin()}>
               {t("landing-page.login")}
             </button>
           </div>
@@ -35,7 +38,7 @@ const LandingPage: React.FC = () => {
             <input
               type="email"
               id="email"
-              placeholder="Dirección de correo electrónico"
+              placeholder={t("landing-page.email")}
               className="w-4/6 p-4  bg-black bg-opacity-50 focus:border-4 border-gray-300 border-2 focus:border-white rounded-md text-white  "
             />
               <button className="bg-[#B20710] hover:bg-red-700 hover:ring-red-700  w-4/12 h-[95%] rounded-md ">

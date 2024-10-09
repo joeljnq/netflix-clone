@@ -5,6 +5,15 @@
         "title": "Peliculas y series sin límites y mucho más",
         "subtitle": "A partir de 5.49. Cancela cuando quieras.",
         "ready": "Quieres ver algo ya? Escribe tu dirección de correo para crear una subcripción o reactivarla.",
-        "getStarted": "Empezar"
+        "getStarted": "Empezar",
+        "email": "Dirección de Correo"
+    },
+    "signIn":{
+        "signIn": "Iniciar Sesión",
+        "email": "Correo o número de teléfono",
+        "password": "Contraseña",
+        "new": "¿Nuevo en Netflix?",
+        "signUp": "Regístrate ahora."
+
     }
 }
