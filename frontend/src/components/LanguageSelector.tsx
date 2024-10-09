@@ -21,9 +21,10 @@ const LanguageSelector: React.FC = () => {
     <select
       className="bg-black text-white p-2 rounded-lg"
       onChange={(e) => changeLan(e.currentTarget.value)}
+      defaultValue={lang}
     >
-      <option value="es"  selected={lang === 'es' ? true : false} >Español</option>
-      <option value="en" selected={lang === 'en' ? true : false} >English</option>
+      <option value="es">Español</option>
+      <option value="en">English</option>
     </select>
   );
 };
