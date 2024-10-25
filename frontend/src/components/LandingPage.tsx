@@ -20,7 +20,7 @@ const LandingPage: React.FC = () => {
           <img src={logo} alt="logo netflix" className="w-36" />
           <div >
             <LanguageSelector />
-            <button className="bg-[#E50914] w-30 rounded-md p-2 ml-3 hover:bg-[#B20710]"
+            <button className="bg-primary-default w-30 rounded-md p-2 ml-3 hover:bg-primary-dark"
             onClick={()=>handleToLogin()}>
               {t("landing-page.login")}
             </button>
@@ -41,7 +41,7 @@ const LandingPage: React.FC = () => {
               placeholder={t("landing-page.email")}
               className="w-4/6 p-4  bg-black bg-opacity-50 focus:border-4 border-gray-300 border-2 focus:border-white rounded-md text-white  "
             />
-              <button className="bg-[#B20710] hover:bg-red-700 hover:ring-red-700  w-4/12 h-[95%] rounded-md ">
+              <button className="bg-primary-default hover:bg-primary-dark hover:ring-red-700  w-4/12 h-[95%] rounded-md ">
             {t("landing-page.getStarted")}
           </button>
           </div>
@@ -49,6 +49,7 @@ const LandingPage: React.FC = () => {
         </div>
       </div>
     {/*separator*/}
+
     </>
   );
 };

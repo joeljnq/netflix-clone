@@ -1,20 +1,34 @@
 {
-    "landing-page":{
-        "about":"About Us",
-        "login": "Sign In",
-        "title": "Unlimited movies, TV, showsm and more",
-        "subtitle": "starts at EUR 5.49. Cancel anytime.",
-        "ready": "Ready to watch? Enter your email to create or restart your membership.",
-        "getStarted": "Get Started",
-        "email": "Email Address"        
+  "landing-page": {
+    "about": "About Us",
+    "login": "Sign In",
+    "title": "Unlimited movies, TV, showsm and more",
+    "subtitle": "starts at EUR 5.49. Cancel anytime.",
+    "ready": "Ready to watch? Enter your email to create or restart your membership.",
+    "getStarted": "Get Started",
+    "email": "Email Address"
+  },
+  "signIn": {
+    "signIn": "Sign In",
+    "email": "Email or mobile number",
+    "password": "Password",
+    "new": "New to Netflix?",
+    "signUp": "Sign up now.",
+    "invalidEmail": "Please enter a valid email",
+    "invalidPassword": "Your password must contain between 4 and 60 characters",
+    "or": "or"
+  },
+  "feed": {
+    "nav": {
+      "search": "Search",
+      "tvShows": "TV Shows",
+      "movies": "Movies",
+      "newReleases": "New & Popular",
+      "myList": "My List"
     },
-    "signIn":{
-        "signIn": "Sign In",
-        "email": "Email or mobile number",
-        "password": "Password",
-        "new": "New to Netflix?",
-        "signUp": "Sign up now."
-
-    }
-
+    "onPopular": "Popular on Netflix",
+    "trending": "Trending Now",
+    "play": "Play",
+    "moreInfo": "More Info"
+  }
 }
