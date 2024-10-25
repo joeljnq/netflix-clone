@@ -1,19 +1,34 @@
 {
-    "landing-page":{
-        "about":"Acerca de Nosotros",
-        "login": "Iniciar Sesión",
-        "title": "Peliculas y series sin límites y mucho más",
-        "subtitle": "A partir de 5.49. Cancela cuando quieras.",
-        "ready": "Quieres ver algo ya? Escribe tu dirección de correo para crear una subcripción o reactivarla.",
-        "getStarted": "Empezar",
-        "email": "Dirección de Correo"
+  "landing-page": {
+    "about": "Acerca de Nosotros",
+    "login": "Iniciar Sesión",
+    "title": "Peliculas y series sin límites y mucho más",
+    "subtitle": "A partir de 5.49. Cancela cuando quieras.",
+    "ready": "Quieres ver algo ya? Escribe tu dirección de correo para crear una subcripción o reactivarla.",
+    "getStarted": "Empezar",
+    "email": "Dirección de Correo"
+  },
+  "signIn": {
+    "signIn": "Iniciar Sesión",
+    "email": "Correo o número de teléfono",
+    "password": "Contraseña",
+    "new": "¿Nuevo en Netflix?",
+    "signUp": "Regístrate ahora.",
+    "invalidEmail": "Por favor, introduce un correo válido",
+    "invalidPassword": "Tu contraseña debe contener entre 4 y 60 caracteres",
+    "or": "o"
+  },
+  "feed": {
+    "nav": {
+      "search": "Buscar",
+      "tvShows": "Series",
+      "movies": "Peliculas",
+      "newReleases": "Nuevos Lanzamientos",
+      "myList": "My List"
     },
-    "signIn":{
-        "signIn": "Iniciar Sesión",
-        "email": "Correo o número de teléfono",
-        "password": "Contraseña",
-        "new": "¿Nuevo en Netflix?",
-        "signUp": "Regístrate ahora."
-
-    }
+    "onPopular": "Popular on Netflix",
+    "trending": "Trending Now",
+    "play": "Reproducir",
+    "moreInfo": "Más Información"
+  }
 }

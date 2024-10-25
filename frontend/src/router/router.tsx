@@ -2,7 +2,9 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import LandingPage from "../components/LandingPage";
 import { useTranslation } from "react-i18next";
 import LandingWrapper from "../components/LandingWrapper";
-import Login from "../components/Login";
+import { Login } from "../components/Login";
+import { Feed } from "../components/Feed";
+import { FeedWrapper } from "../components/FeedWrapper";
 
 const Router = () => {
   const { i18n } = useTranslation();
@@ -15,6 +17,9 @@ const Router = () => {
           <Route index element={<LandingPage />} />
           <Route path="/:lang/login" element={<Login />} />
         <Route path="*" element={<h1>404</h1>} />
+        </Route>
+        <Route path="/:lang/feed" element={<FeedWrapper />}>
+        <Route index element={<Feed />} />
         </Route>
         <Route path="*" element={<h1>404</h1>} />
       </Routes>
