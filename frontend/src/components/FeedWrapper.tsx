@@ -1,22 +1,35 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 
 import avatar from '../assets/images/avatar.webp'
 import logo from "../assets/images/logo.svg";
 import { useTranslation } from "react-i18next";
-import {  useNavigate, useParams } from "react-router-dom";
+import {  Link, useNavigate, useParams } from "react-router-dom";
 
 import { SearchIcon } from "../icons/Icons";
 import { BellIcon } from "../icons/BellIcon";
 import { Outlet } from "react-router-dom";
 import i18n from "./i18n";
+import { useViewPreference } from "../context/ViewPreferenceContext";
 
 
 export const FeedWrapper:React.FC = () => {
   const { t } = useTranslation();
   const { lang } = useParams();
   const navigate = useNavigate();
-  
+  const { setViewPreference} = useViewPreference();
+  const [isTop, setIsTop] = useState(true);
+  useEffect(()=>{
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsTop(false);
+      } else {
+        setIsTop(true);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  },[])
   
   useEffect(() => {
     const supportedLanguages = ["es", "en"];
@@ -25,17 +38,18 @@ export const FeedWrapper:React.FC = () => {
       }else{
         navigate(`/${i18n.language}/404`);
       }
-    
+
   }, [lang, navigate]);
+  
     return (
         <>
-        <header className="fixed w-full max-w-full lg:px-10 flex justify-between z-10">
+        <header className={` py-3 fixed w-full max-w-full lg:px-10 flex justify-between z-10 ${isTop ? 'bg-transparent':'bg-black' } z-50`}>
         <div className="flex items-center gap-5">
           <img src={logo} alt="logo-signIn" className="w-2/12" />
           <ul className="flex gap-10 text-lg">
             <li>{t("feed.nav.search")}</li>
-            <li>{t("feed.nav.tvShows")}</li>
-            <li>{t("feed.nav.movies")}</li>
+            <Link to={`/${lang}/feed`} onClick={()=>setViewPreference('tvShow')}>{t("feed.nav.tvShows")}</Link>
+            <Link to={`/${lang}/feed`} onClick={()=>setViewPreference('movies')}>{t("feed.nav.movies")}</Link>
             <li>{t("feed.nav.newReleases")}</li>
           </ul>
         </div>
