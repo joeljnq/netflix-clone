@@ -18,6 +18,16 @@
     "invalidPassword": "Your password must contain between 4 and 60 characters",
     "or": "or"
   },
+  "signUp": {
+    "signIn": "Sign In Now",
+    "email": "Email or mobile number",
+    "password": "Password",
+    "hasAccount": "Already have an account?",
+    "signUp": "Sign up",
+    "invalidEmail": "Please enter a valid email",
+    "invalidPassword": "Your password must contain between 4 and 60 characters",
+    "or": "or"
+  },
   "feed": {
     "nav": {
       "search": "Search",
