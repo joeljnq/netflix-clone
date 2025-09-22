@@ -3,7 +3,11 @@ interface basicUserProps {
     email: string
     password: string
 }
-export async function login({ email, password}: basicUserProps): Promise<number | undefined> {
+
+interface loginProps {
+  id:number
+}
+export async function login({ email, password}: basicUserProps): Promise<loginProps | undefined> {
   try {
     const url = `${SERVER_URL}/login`
     const data = {
@@ -26,7 +30,7 @@ export async function login({ email, password}: basicUserProps): Promise<number 
 }
 
 
-export async function register ({email,password}:basicUserProps): Promise<number | undefined> {
+export async function register ({email,password}:basicUserProps): Promise<loginProps | undefined> {
   try{
     const url = `${SERVER_URL}/register`
     const data = {

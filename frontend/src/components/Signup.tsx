@@ -3,8 +3,13 @@ import logo from "../assets/images/logo.svg";
 import { useTranslation } from "react-i18next";
 import { checkEmail, checkPassword } from "../forms/functions";
 import { register } from "../service/userService";
+import { useUserId } from "../context/userId";
+import { useNavigate } from "react-router-dom";
+
 export const Signup: React.FC = () => {
-  const { t } = useTranslation();
+  const navigate = useNavigate();
+  const { t, i18n } = useTranslation();
+  const { setUserId } = useUserId();
   const [email, setEmail] = useState<string | null>(null);
   const [password, setPassword] = useState<string | null>(null);
   const [isEmailValid, setIsEmailValid] = useState<boolean | null>(true);
@@ -12,15 +17,13 @@ export const Signup: React.FC = () => {
 
   const submit = async () => {
     if (isEmailValid && isPasswordValid && email && password) {
-      const result = await register({email,password})
-      if(result){
-        console.log('register', result);
-    }else{
-      console.log('Error');
-      
+      const result = await register({ email, password });
+      if (result) {
+        setUserId(result.id);
+        navigate(`/${i18n.language}/feed`);
+      }
     }
-  }
-}
+  };
   useEffect(() => {
     if (email !== null) {
       if (!checkEmail(email ? email : "")) {
@@ -47,7 +50,10 @@ export const Signup: React.FC = () => {
         <header className="mx-auto max-w-6xl ">
           <img src={logo} alt="logo-signUp" className="w-2/12" />
         </header>
-        <form onSubmit={(e)=> e.preventDefault()} className="mt-20 px-20 py-10 lg:max-w-lg bg-black/70 mx-auto flex flex-col gap-10">
+        <form
+          onSubmit={(e) => e.preventDefault()}
+          className="mt-20 px-20 py-10 lg:max-w-lg bg-black/70 mx-auto flex flex-col gap-10"
+        >
           <h2 className="text-4xl">{t("signUp.signUp")}</h2>
           <div>
             <input
@@ -73,15 +79,16 @@ export const Signup: React.FC = () => {
               <p className="text-red-500">{t("signUp.invalidPassword")}</p>
             )}
             <div className="max-w-full mt-4">
-              <button  type="button" className="w-full py-2 text-xl  bg-primary-default hover:bg-primary-dark rounded-l">
+              <button
+                onClick={() => submit()}
+                type="button"
+                className="w-full py-2 text-xl  bg-primary-default hover:bg-primary-dark rounded-l"
+              >
                 {t("signUp.signUp")}
               </button>
 
-              <p className="text-3xl text-center">{t("signUp.or")}</p>
-              
-              <button onClick={()=> submit()} type="button" className="w-full py-2 text-xl  bg-primary-default hover:bg-primary-dark rounded-l">
-                {t("signUp.signUp")}
-              </button>
+              <p className="text-xl text-center">{t("signUp.hasAccount")}</p>
+
             </div>
           </div>
         </form>
