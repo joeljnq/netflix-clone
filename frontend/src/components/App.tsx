@@ -1,16 +1,17 @@
-import { ViewPreferenceProvider } from "../context/ViewPreferenceContext"
-import Router from "../router/router"
-
+import { UserIdProvider } from "../context/userId";
+import { ViewPreferenceProvider } from "../context/ViewPreferenceContext";
+import Router from "../router/router";
 
 function App() {
-
   return (
     <>
-    <ViewPreferenceProvider >
-    <Router />
-    </ViewPreferenceProvider>
+      <ViewPreferenceProvider>
+        <UserIdProvider>
+          <Router />
+        </UserIdProvider>
+      </ViewPreferenceProvider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
